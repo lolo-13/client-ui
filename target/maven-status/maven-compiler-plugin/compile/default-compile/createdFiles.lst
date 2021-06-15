@@ -1,0 +1,4 @@
+org\compain\clientui\model\Book.class
+org\compain\clientui\controller\BookController.class
+org\compain\clientui\controller\ClientController.class
+org\compain\clientui\ClientUiApplication.class
