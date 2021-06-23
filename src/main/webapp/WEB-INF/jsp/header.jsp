@@ -7,17 +7,17 @@
 	</button>
 	<div class="collapse navbar-collapse" id="navbarNav">
 		<ul class="navbar-nav mr-auto">
-			<c:if test="${sessionScope.currentUser == null}">
-				<li class="nav-item"><a class="navbar-brand " href="connexion">Connexion</a>
+			<c:if test="${sessionScope.connected == true}">
+				<li class="nav-item"><a class="navbar-brand " href="/connexion/login">Connexion</a>
 				</li>
 			</c:if>
-			<c:if test="${sessionScope.currentUser == null}">
-				<li class="nav-item"><a class="navbar-brand" href="Inscription">S'inscrire</a>
+			<c:if test="${sessionScope.connected  == null}">
+				<li class="nav-item"><a class="navbar-brand" href="/connexion/signup">S'inscrire</a>
 				</li>
 			</c:if>
 			<li class="nav-item"><a class="navbar-brand" href="accueil">Accueil</a>
 			</li>
-			<c:if test="${sessionScope.currentUser != null}">
+			<c:if test="${sessionScope.connected == null}">
 				<li class="nav-item"><a class="navbar-brand" href="Account">Mon
 						compte</a></li>
 			</c:if>

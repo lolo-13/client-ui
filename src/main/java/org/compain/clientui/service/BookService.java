@@ -15,7 +15,7 @@ public class BookService {
     @Autowired
     private BookProxy bookProxy;
 
-    public List<Book> getBooks(){
-        return bookProxy.getBooks();
+    public List<Book> getBooks(String token){
+        return bookProxy.getBooks(token);
     }
 }
