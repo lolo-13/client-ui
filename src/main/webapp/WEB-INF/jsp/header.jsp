@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top ">
-	<img class="logo" src="images/logo.png" height="autox" width="150px">
+    <a class="navbar-brand" href="/accueil">
+	<img class="logo" src="/images/logo.png" height="autox" width="150px">
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarNav" aria-controls="navbarNav"
 		aria-expanded="false" aria-label="Toggle navigation">
@@ -7,7 +8,7 @@
 	</button>
 	<div class="collapse navbar-collapse" id="navbarNav">
 		<ul class="navbar-nav mr-auto">
-			<c:if test="${sessionScope.connected == true}">
+			<c:if test="${sessionScope.connected == null}">
 				<li class="nav-item"><a class="navbar-brand " href="/connexion/login">Connexion</a>
 				</li>
 			</c:if>
@@ -15,14 +16,16 @@
 				<li class="nav-item"><a class="navbar-brand" href="/connexion/signup">S'inscrire</a>
 				</li>
 			</c:if>
-			<li class="nav-item"><a class="navbar-brand" href="accueil">Accueil</a>
-			</li>
-			<c:if test="${sessionScope.connected == null}">
-				<li class="nav-item"><a class="navbar-brand" href="Account">Mon
-						compte</a></li>
+			<c:if test="${sessionScope.connected == true}">
+				<li class="nav-item"><a class="navbar-brand" href="/api/borrowings/user">Mes emprunts</a></li>
 			</c:if>
-			<li class="nav-item"><a href="Research"><img
-					src="images/loupe.png"></a></li>
+			<c:if test="${sessionScope.connected == true}">
+            	<li class="nav-item"><a class="navbar-brand" href="/api/books">Nos livres</a></li>
+            </c:if>
+            <c:if test="${sessionScope.connected == true}">
+			<li class="nav-item"><a href="/api/books/search"><img
+					src="/images/loupe.png"></a></li>
+			</c:if>
 		</ul>
 	</div>
 

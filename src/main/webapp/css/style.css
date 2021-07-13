@@ -68,20 +68,23 @@ a {
 	padding-top: 10px;
 }
 
-.listSpot ul {
+.listBook ul {
 	list-style-type: none;
 }
-.listSpot {
+.listBook {
 	margin-top: 20px;
 }
 
 .detailSpot ul {
 	list-style-type : circle  ;
-	margin-right: 40px
+	margin-right: 40px;
 }
 
+.borrowing{
+padding: 20px;
+}
 
-.spots {
+.books {
 	justify-content: space-around;
 	flex-wrap: wrap;
 }
@@ -92,35 +95,15 @@ a {
 	width: 300px;
 }
 
-.listSpot p {
+.listBook p {
 	display: flex;
 	justify-content: center;
-}
-
-.detailSpot{
-padding-top: 20px;
-width: 100%;
-}
-
-.detailSpot .image-gauche {
-padding-top : 25px;
-float: left;
-width:40%;
-height:auto;
-}
-.detailSpot .texte-droite {
-margin-left:40%;
-width: 60%;
-height: auto;
-}
-.detailSpot .detailSpotImg {
-width:90%;
 }
 
 .spot .img-container {
 	display: block;
 	overflow: hidden;
-	height: 200px;
+	height: 380px;
 	position: relative;
 }
 
@@ -130,18 +113,14 @@ width:90%;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	height: 100%;
 
 }
-.spot .img-container .tampon{
-	background-image: url(../images/officiel.png);
-	background-size: 100%;
-	display: block;
-	width: 50px;
-	position: relative;
-	height: 50px;
-	left: 0;
-	top: 100%;
-	transform: translateY(-129%);
+.contour {
+margin-top:40px;
+margin-right:40px;
+margin-left:40px;
+margin-bottom:40px;
 }
 
 .formulaire {

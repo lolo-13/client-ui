@@ -3,7 +3,6 @@ package org.compain.clientui.consumer;
 
 import org.compain.clientui.model.User;
 import org.compain.clientui.model.UserLogin;
-import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -34,7 +33,6 @@ public class UserProxy {
         header.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<User> request = new HttpEntity<>(user, header);
         ResponseEntity<User> response = restTemplate.exchange(urlSignup, HttpMethod.POST,request,User.class);
-
         return response.getBody();
     }
 }

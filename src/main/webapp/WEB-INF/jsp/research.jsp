@@ -21,17 +21,23 @@
 	    </header>
 
         <div class="formulaire">
-		    <form:form  method="post" action="/connexion/login" modelAttribute="userlogin">
-			    <div class="form-group">
-				    <form:label for="username" path="username">login</form:label>
-				    <form:input path="username" />
+		    <form:form  method="get" action="/api/books/filtered" modelAttribute="filters">
+			    <div class="row mb-3">
+			        <div class="col">
+				    <form:label for="title" path="title">Titre</form:label>
+				    <form:input path="title" />
 			    </div>
-			    <div class="form-group">
-				    <form:label for="password" path="password">login</form:label>
-				    <form:password path="password" />
+			    <div class="col">
+				    <form:label for="authorName" path="authorName">Auteur (nom)</form:label>
+				    <form:input path="authorName" />
 			    </div>
-				<div class="formulaire">
-			        <input class="btn btn-secondary" type="SUBMIT" value="Submit" />
+			    <div class="col">
+                    <form:label for="category" path="category">Catégorie</form:label>
+                    <form:input path="category" />
+                </div>
+				<div class="col">
+			        <input class="btn btn-secondary" type="SUBMIT" value="chercher" />
+		        </div>
 		        </div>
 		    </form:form>
 	    </div>

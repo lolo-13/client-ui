@@ -2,19 +2,19 @@ package org.compain.clientui.model;
 
 import lombok.Data;
 
+import java.util.Date;
+import java.util.List;
+
 @Data
 public class Book {
 
-    public String title;
-    public String author;
-    public String resume;
+    private Long idBook;
+    private String title;
+    private Author authorDto;
+    private Date publicationDate;
+    private String summary;
+    private Category category;
+    private List<Copy> copies;
+    private int numberOfCopies;
 
-    @Override
-    public String toString(){
-        return "Book{" +
-                "title='" + title + "'"+
-                ", author='" + author + "'" +
-                ", resume='" + resume + "'" +
-                "}";
-    }
 }
