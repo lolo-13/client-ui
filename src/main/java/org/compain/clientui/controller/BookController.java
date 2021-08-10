@@ -2,16 +2,13 @@ package org.compain.clientui.controller;
 
 import org.compain.clientui.model.Book;
 import org.compain.clientui.model.FilterResearch;
-import org.compain.clientui.model.UserLogin;
 import org.compain.clientui.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-
 import java.util.List;
-import java.util.Map;
+
 
 @Controller
 public class BookController {

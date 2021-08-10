@@ -32,9 +32,13 @@
        			<div class="col-7"
        			    <div class="text-dark">
        			        <p class="font-weight-bold"> Auteur:</p>
-       			        <p>${book.authorDto.name} </p>
+       			        <p> ${book.authorDto.firstname} ${book.authorDto.name} </p>
        			        <p class="font-weight-bold">Résumé:</p>
        			        <p>${book.summary}</p>
+       			        <p class="font-weight-bold">Catégorie:</p>
+       			        <p>${book.categoryDto.name}</p>
+       			        <p class="font-weight-bold">Examplaires disponibles:</p>
+       			        <p>${book.numberOfCopies}</p>
                     </div>
        		    </div>
        	    </div>
