@@ -38,10 +38,13 @@
                                     </p>
                                             <p class="card-text">
                                                 <c:if test="${borrowing.renewal == true}"> le prêt a déjà été prolongé </c:if>
-                                                    <c:if test="${borrowing.renewal != true}">
+                                                <c:if test="${borrowing.renewable == false}"> le délai pour rendre le livre est dépassé - renouvellement emprunt impossible </c:if>
+                                                <c:if test="${borrowing.renewable != true}">
+                                                    <c:if test="${borrowing.renewable == true}">
                                                     <form:hidden path="idBorrowing" value = "${borrowing.idBorrowing}"/>
                                                     <input class="btn btn-secondary" type="SUBMIT" value="Prolonger le prêt" />
                                                     </c:if>
+                                                </c:if>
                                             </p>
                                     </p>
                                 </div>

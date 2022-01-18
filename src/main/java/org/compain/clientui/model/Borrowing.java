@@ -16,6 +16,8 @@ public class Borrowing {
     private LocalDateTime borrowingLimitDate;
     private Boolean renewal;
     private Boolean returned;
+    //# FIX ticket 2: ajout status renouvelable d'un emprunt
+    private Boolean renewable;
 
 
 }
