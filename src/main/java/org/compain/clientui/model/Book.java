@@ -13,7 +13,7 @@ public class Book {
     private Author authorDto;
     private Date publicationDate;
     private String summary;
-    private Category category;
+    private Category categoryDto;
     private List<Copy> copies;
     private int numberOfCopies;
 

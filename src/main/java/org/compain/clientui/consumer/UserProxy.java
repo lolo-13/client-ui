@@ -3,6 +3,7 @@ package org.compain.clientui.consumer;
 
 import org.compain.clientui.model.User;
 import org.compain.clientui.model.UserLogin;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -11,8 +12,9 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class UserProxy {
 
-    private String urlSignup = "http://localhost:8081/connexion/signup";
-    private String urlAuth = "http://localhost:8081/connexion/login";
+    @Value("${backend.base-url}")
+    private String url;
+
     private final RestTemplate restTemplate;
 
     public UserProxy(RestTemplate restTemplate) {
@@ -24,7 +26,7 @@ public class UserProxy {
         HttpHeaders header = new HttpHeaders();
         header.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<UserLogin> request = new HttpEntity<>(userLogin, header);
-        ResponseEntity<String> response = restTemplate.exchange(urlAuth, HttpMethod.POST, request, String.class);
+        ResponseEntity<String> response = restTemplate.exchange(url + "connexion/login", HttpMethod.POST, request, String.class);
         return response.getBody();
     }
 
@@ -32,7 +34,7 @@ public class UserProxy {
         HttpHeaders header = new HttpHeaders();
         header.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<User> request = new HttpEntity<>(user, header);
-        ResponseEntity<User> response = restTemplate.exchange(urlSignup, HttpMethod.POST,request,User.class);
+        ResponseEntity<User> response = restTemplate.exchange(url +"connexion/signup", HttpMethod.POST,request,User.class);
         return response.getBody();
     }
 }
